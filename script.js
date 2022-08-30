@@ -6,8 +6,13 @@ var today = new Date();
 
 var pagina = document.getElementsByClassName("pagina")[0];
 
+var counter_fondo = document.getElementsByClassName("num-fondo")[0];
 var counter = document.getElementsByClassName("num-frente")[0];
 var counter_blur = document.getElementsByClassName("num-frente-blur")[0];
+
+var jp_fondo = document.getElementsByClassName("nombre")[0];
+var jp = document.getElementsByClassName("nombre-frente")[0];
+var jp_blur = document.getElementsByClassName("nombre-frente-blur")[0];
 
 console.log( "today " + today.getDay() + "/" + today.getMonth() + "/" + today.getFullYear() );
 console.log( "JP date " + jpDate.getDay() + "/" +  jpDate.getMonth() + "/" + jpDate.getFullYear() );
@@ -59,12 +64,39 @@ function tack()
     }, time);
 }
 
+// window.addEventListener("resize", (e)=>{
+//     if(window.innerHeight > window.innerWidth){
+//         pagina.style.setProperty("--rotate", "90deg");
+//     }else{
+//         pagina.style.setProperty("--rotate", "0deg");
+//     }
+// })
+
 window.addEventListener("resize", (e)=>{
-    if(window.innerHeight > window.innerWidth){
-        pagina.style.setProperty("--rotate", "90deg");
-    }else{
-        pagina.style.setProperty("--rotate", "0deg");
-    }
+    resizetext(counter_fondo, [counter, counter_blur])
+    resizetext(jp_fondo, [jp, jp_blur])
 })
 
-window.dispatchEvent(Event("resize"));
+/**
+ * 
+ * @param {HTMLElement} elemento 
+ * @param {[HTMLElement]} lista 
+ */
+function resizetext(elemento, lista){
+
+    if(window.innerHeight > window.innerWidth){
+        pagina.style.setProperty("--multy", "1");
+    }else{
+        pagina.style.setProperty("--multy", "1.5");
+    }
+
+    console.log("rezisetext()")
+    elemento.style.setProperty("--font-size", elemento.clientHeight + "px");
+    
+    for (const element of lista) {
+        element.style.setProperty("--font-size", elemento.clientHeight + "px");
+        element.style.setProperty("--ancho", elemento.clientWidth + "px");
+    }
+}
+window.dispatchEvent(new Event("resize"));
+window.dispatchEvent(new Event("resize"));
