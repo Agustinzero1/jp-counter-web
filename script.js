@@ -66,3 +66,5 @@ window.addEventListener("resize", (e)=>{
         pagina.style.setProperty("--rotate", "0deg");
     }
 })
+
+window.dispatchEvent(Event("resize"));
