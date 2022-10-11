@@ -141,13 +141,13 @@ body{
     filter: blur(4vmin);
     font-size: var(--font-size);
 
-    animation: blur 2s ease-in-out infinite;
+    animation: blur 5s ease-in-out infinite;
 
     z-index: 10;
 }
 
 @keyframes blur {
-    0% {filter: blur(2.5vmin)}
-    50%{filter: blur(5.8vmin)}
-    100%{filter: blur(2.5vmin)}
+    0% {filter: blur(3.5vmin)}
+    50%{filter: blur(5.5vmin)}
+    100%{filter: blur(3.5vmin)}
   }
