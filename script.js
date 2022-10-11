@@ -98,5 +98,21 @@ function resizetext(elemento, lista){
         element.style.setProperty("--ancho", elemento.clientWidth + "px");
     }
 }
-window.dispatchEvent(new Event("resize"));
+
+setTimeout(() => {
+       window.dispatchEvent(new Event("resize")); 
+}, 10);
+
+setTimeout(() => {
+       window.dispatchEvent(new Event("resize")); 
+}, 100);
+
+setTimeout(() => {
+       window.dispatchEvent(new Event("resize")); 
+}, 500);
+
+setTimeout(() => {
+       window.dispatchEvent(new Event("resize")); 
+}, 1000);
+
 window.dispatchEvent(new Event("resize"));
