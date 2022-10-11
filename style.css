@@ -147,7 +147,7 @@ body{
 }
 
 @keyframes blur {
-    0% {filter: blur(4vmin)}
-    50%{filter: blur(5.5vmin)}
-    100%{filter: blur(4vmin)}
+    0% {filter: blur(2.5vmin)}
+    50%{filter: blur(5.8vmin)}
+    100%{filter: blur(2.5vmin)}
   }
